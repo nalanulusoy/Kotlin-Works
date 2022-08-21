@@ -1,5 +1,7 @@
 package com.example.kotlinworkspace.datastructure.lineer
 
+import java.util.*
+
 
 /**
  * Created by Nalan Ulusoy on 21,Ağustos,2022
@@ -36,4 +38,16 @@ fun main() {
 
     val filteredMap = linkedMap.filter { (key, value) -> key.endsWith("1") && value > 10}
      println(filteredMap)
+
+
+    val treeMapFavoriteCities = TreeMap<Int,String>()
+
+    treeMapFavoriteCities[1] = "Madrid"
+    treeMapFavoriteCities[2] = "Roma"
+    treeMapFavoriteCities[3] = "Viyana"
+
+    treeMapFavoriteCities.forEach {
+        println("Favorite Number :${it.key} Cities: ${it.value}")
+    }
+    println(treeMapFavoriteCities)
 }
