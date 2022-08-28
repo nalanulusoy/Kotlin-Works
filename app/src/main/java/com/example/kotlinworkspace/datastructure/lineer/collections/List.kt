@@ -1,5 +1,7 @@
 package com.example.kotlinworkspace.datastructure.lineer.collections
 
+import java.lang.reflect.Array.set
+
 
 /**
  * Created by Nalan Ulusoy on 21,Ağustos,2022
@@ -11,7 +13,7 @@ Iterators can be obtained for inheritors of the Iterable<T> interface,
 
 * */
 fun main() {
-    val arrayList = arrayListOf("Pop", 2, true, "Jazz")
+    /*val arrayList = arrayListOf("Pop", 2, true, "Jazz")
     val list = listOf("Rock", 2, "Slow", true) // not writable only readable
     val mutableList = mutableListOf("Pop", "Jazz", 3)
     val intArray = IntArray(size = 3) {
@@ -68,5 +70,46 @@ fun main() {
         .take(4)
 
     println("Lengths of first 4 words longer than 3 chars:")
-    println(lengthsList)
+    println(lengthsList)*/
+
+
+    //matrix 3*3
+    val arr = mutableListOf(mutableListOf(1, 2, 3, 4),
+        mutableListOf(5, 6, 7, 8),
+        mutableListOf(9, 10, 11, 12))
+    println(arr)
+    println(arr[2][3])
+    println(arr[0][0])
+
+    //matrix 3*5
+    val arr2 = mutableListOf(mutableListOf(1, 2, 3, 4, 5),
+        mutableListOf(5, 6, 7, 8, 5),
+        mutableListOf(9, 10, 11, 12, 5))
+    println(arr2)
+    println(arr2[2][3])
+    println(arr2[0][0])
+    println(arr2[2][4])
+
+    val rows = 2
+    val columns = 3
+    val firstMatrix = arrayOf(intArrayOf(2, 3, 4), intArrayOf(5, 2, 3))
+    val secondMatrix = arrayOf(intArrayOf(-4, 5, 3), intArrayOf(5, 6, 3))
+
+    // Adding Two matrices
+    val sum = Array(rows) { IntArray(columns) }
+    for (i in 0 until rows) {
+        for (j in 0 until columns) {
+            sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j]
+        }
+    }
+
+    // Displaying the result
+    println("Sum of two matrices is: ")
+    for (row in sum) {
+        for (column in row) {
+            print("$column    ")
+        }
+        println()
+    }
 }
+
