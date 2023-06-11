@@ -5,8 +5,9 @@ package com.example.kotlinworkspace.hackerrank
  * Created by Nalan Ulusoy on 25,Ekim,2022
  */
 fun main() {
-println(countingValleys(12,"DDUUDDUDUUUD")) // 2
-println(countingValleys(8,"UDDDUDUU")) // 1
+//println(countingValleys(12,"DDUUDDUDUUUD")) // 2
+//println(countingValleys(8,"UDDDUDUU")) // 1
+println(solution("{{{}{}{{}}}}"))
 
 }
 
@@ -26,4 +27,18 @@ fun countingValleys(steps: Int, path: String): Int {
         }
     }
     return valley
+}
+
+fun solution(path: String): Boolean {
+    var left = 0
+    var right = 0
+    path.forEach {
+        if (it == '{'){
+            left += 1
+        }
+        else {
+           right +=1
+        }
+    }
+    return left == right
 }
